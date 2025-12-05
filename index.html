@@ -1,0 +1,139 @@
+
+index.html
+style.css
+script.js
+img/
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfólio • Aline</title>
+
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <!-- HEADER / NAV -->
+<header class="site-header">
+  <div class="container header-inner">
+    <a class="logo" href="#sobre">Aline</a>
+
+    <!-- botão hambúrguer para mobile -->
+    <button id="menu-toggle" class="menu-toggle" aria-controls="site-nav" aria-expanded="false" aria-label="Abrir menu">
+      <span class="hamburger" aria-hidden="true"></span>
+    </button>
+
+    <nav id="site-nav" class="site-nav" aria-label="Navegação principal">
+      <ul>
+        <li><a href="#sobre">Sobre</a></li>
+        <li><a href="#formacao">Formação</a></li>
+        <li><a href="#portfolio">Portfólio</a></li>
+        <li><a href="#contato">Contato</a></li>
+      </ul>
+    </nav>
+
+    <!-- botão de tema (sol / lua) -->
+    <button id="theme-toggle" class="theme-toggle" aria-pressed="false" aria-label="Alternar tema">
+      <span id="theme-icon" aria-hidden="true">🌞</span>
+    </button>
+  </div>
+</header>
+
+
+
+    <!-- SEÇÃO SOBRE MIM -->
+    <section id="sobre" class="section">
+        
+        <h2>Sobre mim</h2>
+
+        <p>
+            Olá! Meu nome é Aline e estou começando na área de tecnologia.
+            Estou aprendendo desenvolvimento web e ciência de dados, e estou 
+            construindo este portfólio como parte dos meus estudos.
+        </p>
+
+        <p>
+            No tempo livre gosto de ler, ver séries e aprender coisas novas.
+            Criei este site para treinar HTML, CSS e JavaScript e compartilhar 
+            um pouco da minha trajetória no início dessa jornada.
+        </p>
+    </section>
+
+        <!-- SEÇÃO FORMAÇÃO -->
+<section id="formacao" class="section">
+
+    <h2>Formação</h2>
+
+    <!-- Formação principal -->
+    <h3>Formação Acadêmica</h3>
+    <ul>
+        <li>Tecnologia em Ciência de Dados — Cursando</li>
+    </ul>
+
+    <!-- Cursos adicionais -->
+    <h3>Cursos Complementares</h3>
+    <ul>
+        <li>HTML e CSS — Iniciante</li>
+        <li>JavaScript — Iniciante</li>
+        <li>Excel e Power BI — Iniciante</li>
+        <li>Banco de Dados MySQL — Iniciante</li>
+    </ul>
+
+    <!-- Idiomas -->
+    <h3>Idiomas</h3>
+    <ul>
+        <li>Português — Nativo</li>
+        <li>Inglês — Intermediário</li>
+    </ul>
+</section>
+
+
+<!-- SEÇÃO PORTFÓLIO -->
+<section id="portfolio" class="section">
+
+    <h2>Portfólio</h2>
+
+    <p>Aqui está o meu projeto de Banco de Dados desenvolvido durante os estudos.</p>
+
+    <ul>
+        <li>
+            <strong>Projeto: Modelagem e Implementação de Banco de Dados</strong>
+            <br>
+
+            <p>
+                Projeto dividido em duas etapas: modelagem conceitual (MER) e
+                implementação no MySQL. Inclui criação de tabelas, chaves
+                primárias, estrangeiras e consultas SQL para relatórios.
+            </p>
+
+            <!-- Aqui está o link para o PDF -->
+            <a href="projeto-banco-dados.pdf" target="_blank">Abrir PDF do projeto</a>
+        </li>
+    </ul>
+
+</section>
+<!-- SEÇÃO: CONTATO (formulário) -->
+<section id="contato" class="section">
+  <h2>Contato</h2>
+
+  <p>Deixe sua mensagem — eu respondo por e-mail.</p>
+
+  <!-- novalidate: será feito validação personalizada em JavaScript -->
+  <form id="contact-form" novalidate>
+    <label for="name">Nome</label>
+    <input id="name" name="name" type="text" placeholder="Seu nome" required>
+
+    <label for="email">E-mail</label>
+    <input id="email" name="email" type="email" placeholder="seu@exemplo.com" required>
+
+    <label for="message">Mensagem</label>
+    <textarea id="message" name="message" rows="5" placeholder="Escreva sua mensagem" required></textarea>
+
+    <button type="submit">Enviar</button>
+  </form>
+
+  <!-- local para mostrar mensagens de erro/sucesso (acessível) -->
+  <div id="form-message" aria-live="polite" role="status" style="margin-top:0.5rem"></div>
+</section>

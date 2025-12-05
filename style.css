@@ -1,0 +1,158 @@
+/* Formulário de Contato */
+#contact-form { 
+  max-width: 600px; 
+  margin-top: 1rem; 
+}
+
+#contact-form label { 
+  display: block; 
+  margin-top: 0.75rem; 
+  font-weight: 600; 
+}
+
+#contact-form input,
+#contact-form textarea {
+  width: 100%;
+  padding: 0.6rem;
+  margin-top: 0.25rem;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 1rem;
+}
+
+#contact-form button {
+  margin-top: 1rem;
+  padding: 0.6rem 1rem;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  background: #2b8cff;
+  color: white;
+  font-weight: 600;
+}
+
+#contact-form button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+#form-message {
+  font-size: 0.95rem;
+  margin-top: 0.5rem;
+}
+
+/* ---------- HEADER & NAV ---------- */
+.site-header{
+  position:sticky;
+  top:0;
+  z-index:1000;
+  background:var(--bg);
+  border-bottom:1px solid rgba(0,0,0,0.06);
+  backdrop-filter: blur(4px);
+}
+.header-inner{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:1rem;
+  padding:0.75rem 1rem;
+  max-width:var(--max-width);
+  margin:0 auto;
+}
+.logo{ font-weight:700; font-size:1.1rem; text-decoration:none; color:var(--text); }
+
+/* NAV (desktop) */
+.site-nav ul{ list-style:none; display:flex; gap:1rem; margin:0; padding:0; align-items:center; }
+.site-nav a{ text-decoration:none; color:var(--text); padding:0.4rem; border-radius:6px; }
+.site-nav a:hover{ background:rgba(0,0,0,0.04); }
+
+/* HAMBURGER (mobile) */
+.menu-toggle{ display:none; background:none; border:none; cursor:pointer; padding:0.25rem; }
+.hamburger{
+  display:inline-block;
+  width:22px;
+  height:2px;
+  background:var(--text);
+  position:relative;
+  transition: all 0.25s ease;
+}
+.hamburger::before,
+.hamburger::after{
+  content:"";
+  position:absolute;
+  left:0;
+  width:22px;
+  height:2px;
+  background:var(--text);
+  transition: all 0.25s ease;
+}
+.hamburger::before{ top:-7px; }
+.hamburger::after{ top:7px; }
+
+/* Quando menu aberto, transforma hambúrguer em X */
+.menu-toggle[aria-expanded="true"] .hamburger{
+  background:transparent;
+}
+.menu-toggle[aria-expanded="true"] .hamburger::before{
+  transform: rotate(45deg) translate(5px, 5px);
+}
+.menu-toggle[aria-expanded="true"] .hamburger::after{
+  transform: rotate(-45deg) translate(5px, -5px);
+}
+
+/* MOBILE: esconder nav e mostrar botão */
+@media (max-width: 768px){
+  .site-nav{ 
+    display:none;
+    position:absolute;
+    left:0; right:0;
+    top:100%;
+    background:var(--bg);
+    box-shadow:0 8px 24px rgba(0,0,0,0.08);
+    padding:1rem;
+  }
+  .site-nav.open{ display:block; animation:fadeIn 0.18s ease; }
+  .site-nav ul{ flex-direction:column; gap:0.5rem; }
+  .menu-toggle{ display:inline-block; }
+}
+
+/* theme toggle button */
+.theme-toggle{
+  background:transparent;
+  border:none;
+  cursor:pointer;
+  padding:0.25rem;
+  font-size:1.05rem;
+}
+.theme-toggle:focus, .menu-toggle:focus{ outline:2px solid rgba(43,140,255,0.25); outline-offset:2px; }
+
+/* pequena animação */
+@keyframes fadeIn{ from{opacity:0; transform:translateY(-4px);} to{opacity:1; transform:none;} }
+
+/* ---------- váriaveis de tema escuro (aplique a classe html.dark) ---------- */
+:root{
+  --bg:#ffffff;
+  --text:#222;
+  --accent:#2b8cff;
+  --max-width:1000px;
+}
+html.dark{
+  --bg:#0f1115;
+  --text:#e6e6e6;
+  --accent:#7abaff;
+}
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+body {
+  background: var(--bg);
+  color: var(--text);
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  transition: background 0.3s ease, color 0.3s ease;
+}

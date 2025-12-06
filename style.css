@@ -1,15 +1,26 @@
-/* Formulário de Contato */
+
+ /* 
+   FORMULÁRIO DE CONTATO
+   (Estilização dos campos, botão e mensagens)
+*/
+
 #contact-form { 
   max-width: 600px; 
   margin-top: 1rem; 
+  background: var(--bg);
+  padding: 1.5rem;
+  border-radius: 10px;
+  border: 1px solid rgba(0,0,0,0.1);
 }
 
+/* Labels do formulário */
 #contact-form label { 
   display: block; 
   margin-top: 0.75rem; 
   font-weight: 600; 
 }
 
+/* Campos de input*/
 #contact-form input,
 #contact-form textarea {
   width: 100%;
@@ -20,6 +31,7 @@
   font-size: 1rem;
 }
 
+/* Botão de enviar */
 #contact-form button {
   margin-top: 1rem;
   padding: 0.6rem 1rem;
@@ -31,25 +43,32 @@
   font-weight: 600;
 }
 
+/* Botão quando desativado */
 #contact-form button:disabled {
   opacity: 0.6;
   cursor: not-allowed;
 }
 
+/* Mensagens de erro/sucesso */
 #form-message {
   font-size: 0.95rem;
   margin-top: 0.5rem;
 }
 
-/* ---------- HEADER & NAV ---------- */
+
+/* CABEÇALHO E MENU DE NAVEGAÇÃO*/
+
+/* Header fixo no topo */
 .site-header{
-  position:sticky;
-  top:0;
-  z-index:1000;
-  background:var(--bg);
-  border-bottom:1px solid rgba(0,0,0,0.06);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background: var(--bg);
+  border-bottom: 1px solid rgba(0,0,0,0.06);
   backdrop-filter: blur(4px);
 }
+
+/* Área interna do header */
 .header-inner{
   display:flex;
   align-items:center;
@@ -59,15 +78,48 @@
   max-width:var(--max-width);
   margin:0 auto;
 }
-.logo{ font-weight:700; font-size:1.1rem; text-decoration:none; color:var(--text); }
 
-/* NAV (desktop) */
-.site-nav ul{ list-style:none; display:flex; gap:1rem; margin:0; padding:0; align-items:center; }
-.site-nav a{ text-decoration:none; color:var(--text); padding:0.4rem; border-radius:6px; }
-.site-nav a:hover{ background:rgba(0,0,0,0.04); }
+/* Logo (meu nome no menu) */
+.logo{
+  font-weight:700;
+  font-size:1.1rem;
+  text-decoration:none;
+  color:var(--text);
+}
 
-/* HAMBURGER (mobile) */
-.menu-toggle{ display:none; background:none; border:none; cursor:pointer; padding:0.25rem; }
+/* --- NAV no desktop --- */
+.site-nav ul{
+  list-style:none;
+  display:flex;
+  gap:1rem;
+  margin:0;
+  padding:0;
+  align-items:center;
+}
+
+.site-nav a{
+  text-decoration:none;
+  color:var(--text);
+  padding:0.4rem;
+  border-radius:6px;
+}
+
+.site-nav a:hover{
+  background:rgba(0,0,0,0.04);
+}
+
+
+/*MENU MOBILE (BOTÃO HAMBÚRGUER)*/
+
+.menu-toggle{
+  display:none;
+  background:none;
+  border:none;
+  cursor:pointer;
+  padding:0.25rem;
+}
+
+/* Três risquinhos do ícone */
 .hamburger{
   display:inline-block;
   width:22px;
@@ -76,6 +128,8 @@
   position:relative;
   transition: all 0.25s ease;
 }
+
+/* Linhas de cima e baixo */
 .hamburger::before,
 .hamburger::after{
   content:"";
@@ -86,10 +140,11 @@
   background:var(--text);
   transition: all 0.25s ease;
 }
+
 .hamburger::before{ top:-7px; }
 .hamburger::after{ top:7px; }
 
-/* Quando menu aberto, transforma hambúrguer em X */
+/* Faz o X quando o menu abre */
 .menu-toggle[aria-expanded="true"] .hamburger{
   background:transparent;
 }
@@ -100,8 +155,12 @@
   transform: rotate(-45deg) translate(5px, -5px);
 }
 
-/* MOBILE: esconder nav e mostrar botão */
+
+/* NAV: MOBILE*/
+
 @media (max-width: 768px){
+
+  /* Nav começa escondida */
   .site-nav{ 
     display:none;
     position:absolute;
@@ -111,12 +170,30 @@
     box-shadow:0 8px 24px rgba(0,0,0,0.08);
     padding:1rem;
   }
-  .site-nav.open{ display:block; animation:fadeIn 0.18s ease; }
-  .site-nav ul{ flex-direction:column; gap:0.5rem; }
-  .menu-toggle{ display:inline-block; }
+
+  /* Quando abre, aparece */
+  .site-nav.open{
+    display:block;
+    animation:fadeIn 0.18s ease;
+  }
+
+  /* Links em coluna */
+  .site-nav ul{
+    flex-direction:column;
+    gap:0.5rem;
+  }
+
+  /* Botão aparece só no mobile */
+  .menu-toggle{
+    display:inline-block;
+  }
 }
 
-/* theme toggle button */
+
+/*
+   BOTÃO DE TEMA (SOL / LUA)
+*/
+
 .theme-toggle{
   background:transparent;
   border:none;
@@ -124,35 +201,101 @@
   padding:0.25rem;
   font-size:1.05rem;
 }
-.theme-toggle:focus, .menu-toggle:focus{ outline:2px solid rgba(43,140,255,0.25); outline-offset:2px; }
 
-/* pequena animação */
-@keyframes fadeIn{ from{opacity:0; transform:translateY(-4px);} to{opacity:1; transform:none;} }
+.theme-toggle:focus, 
+.menu-toggle:focus{
+  outline:2px solid rgba(43,140,255,0.25);
+  outline-offset:2px;
+}
 
-/* ---------- váriaveis de tema escuro (aplique a classe html.dark) ---------- */
+
+/* Animação ao abrir menu */
+@keyframes fadeIn{
+  from{ opacity:0; transform:translateY(-4px);}
+  to{ opacity:1; transform:none;}
+}
+
+
+/* 
+   VARIÁVEIS DE TEMA
+*/
+
 :root{
   --bg:#ffffff;
   --text:#222;
   --accent:#2b8cff;
   --max-width:1000px;
 }
+
+/* Tema escuro (ativado pelo JS) */
 html.dark{
   --bg:#0f1115;
   --text:#e6e6e6;
   --accent:#7abaff;
 }
+
+
+/* =
+   ESTILOS GERAIS DA PÁGINA
+*/
+
 body {
   background: var(--bg);
   color: var(--text);
   font-family: Arial, sans-serif;
   margin: 0;
+  padding: 0;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+/* Cada seção do conteúdo */
+.section {
+  max-width: 900px;
+  margin: 3rem auto;
+  padding: 2rem;
+  background: rgba(0,0,0,0.02);
+  border-radius: 12px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+}
+
+/* Tema escuro para as seções */
+html.dark .section {
+  background: #1a1d22;
+  box-shadow: 0 2px 10px rgba(255,255,255,0.03);
+}
+
+/* Títulos */
+.section h2 {
+  margin-bottom: 1rem;
+  font-size: 1.8rem;
+}
+
+/*PORTFÓLIO*/
+
+#portfolio ul {
+  list-style: none;
   padding: 0;
 }
-body {
+
+#portfolio li {
   background: var(--bg);
+  padding: 1.5rem;
+  border-radius: 10px;
+  margin-top: 1rem;
+  border: 1px solid rgba(0,0,0,0.1);
+}
+
+html.dark #portfolio li {
+  border-color: rgba(255,255,255,0.1);
+}
+
+
+/* TIPOGRAFIA*/
+
+h2, h3 {
   color: var(--text);
-  margin: 0;
-  padding: 0;
-  font-family: Arial, sans-serif;
-  transition: background 0.3s ease, color 0.3s ease;
+}
+
+p, li {
+  line-height: 1.6;
 }

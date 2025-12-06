@@ -1,31 +1,34 @@
 
-index.html
-style.css
-script.js
-img/
 
-<!DOCTYPE html>
+ <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfólio • Aline</title>
+    <title>Portfólio • Aline Leite Francelino</title>
 
+    <!-- Arquivo de estilos do site -->
     <link rel="stylesheet" href="style.css">
+
+    <!-- Arquivo de JavaScript com validações e interações -->
     <script src="script.js" defer></script>
 </head>
 <body>
-    <!-- HEADER / NAV -->
+
+<!--CABEÇALHO + MENU DE NAVEGAÇÃO-->
 <header class="site-header">
   <div class="container header-inner">
-    <a class="logo" href="#sobre">Aline</a>
 
-    <!-- botão hambúrguer para mobile -->
-    <button id="menu-toggle" class="menu-toggle" aria-controls="site-nav" aria-expanded="false" aria-label="Abrir menu">
-      <span class="hamburger" aria-hidden="true"></span>
+    <!-- Logo com meu nome -->
+    <a class="logo" href="#sobre">Aline Leite Francelino</a>
+
+    <!-- Botão hambúrguer que aparece no celular -->
+    <button id="menu-toggle" class="menu-toggle" aria-controls="site-nav" aria-expanded="false">
+      <span class="hamburger"></span>
     </button>
 
-    <nav id="site-nav" class="site-nav" aria-label="Navegação principal">
+    <!-- Menu de navegação -->
+    <nav id="site-nav" class="site-nav">
       <ul>
         <li><a href="#sobre">Sobre</a></li>
         <li><a href="#formacao">Formação</a></li>
@@ -34,51 +37,56 @@ img/
       </ul>
     </nav>
 
-    <!-- botão de tema (sol / lua) -->
-    <button id="theme-toggle" class="theme-toggle" aria-pressed="false" aria-label="Alternar tema">
-      <span id="theme-icon" aria-hidden="true">🌞</span>
+    <!-- Botão de alternância de tema (claro/escuro) -->
+    <button id="theme-toggle" class="theme-toggle" aria-label="Alternar tema" aria-pressed="false">
+      <span id="theme-icon">🌞</span>
     </button>
+
   </div>
 </header>
 
 
 
-    <!-- SEÇÃO SOBRE MIM -->
-    <section id="sobre" class="section">
-        
-        <h2>Sobre mim</h2>
+<!--SEÇÃO SOBRE MIM-->
+<section id="sobre" class="section">
 
-        <p>
-            Olá! Meu nome é Aline e estou começando na área de tecnologia.
-            Estou aprendendo desenvolvimento web e ciência de dados, e estou 
-            construindo este portfólio como parte dos meus estudos.
-        </p>
+    <h2>Sobre mim</h2>
 
-        <p>
-            No tempo livre gosto de ler, ver séries e aprender coisas novas.
-            Criei este site para treinar HTML, CSS e JavaScript e compartilhar 
-            um pouco da minha trajetória no início dessa jornada.
-        </p>
-    </section>
+    <!-- Texto simples apresentando quem eu sou -->
+    <p>
+        Olá! Meu nome é Aline e estou iniciando meus estudos na área de tecnologia.
+        Este portfólio foi criado como parte das minhas atividades práticas, utilizando
+        HTML, CSS e JavaScript.
+    </p>
 
-        <!-- SEÇÃO FORMAÇÃO -->
+    <p>
+        No meu tempo livre gosto de ler, assistir séries e aprender assuntos novos.
+        Aqui compartilho um pouco da minha evolução e dos projetos que desenvolvo
+        ao longo da minha formação em Ciência de Dados.
+    </p>
+
+</section>
+
+
+
+<!--SEÇÃO DE FORMAÇÃO-->
 <section id="formacao" class="section">
 
     <h2>Formação</h2>
 
-    <!-- Formação principal -->
+    <!-- Formação acadêmica principal -->
     <h3>Formação Acadêmica</h3>
     <ul>
         <li>Tecnologia em Ciência de Dados — Cursando</li>
     </ul>
 
-    <!-- Cursos adicionais -->
+    <!-- Cursos extras que estou estudando -->
     <h3>Cursos Complementares</h3>
     <ul>
         <li>HTML e CSS — Iniciante</li>
         <li>JavaScript — Iniciante</li>
-        <li>Excel e Power BI — Iniciante</li>
         <li>Banco de Dados MySQL — Iniciante</li>
+        <li>Excel e Power BI — Iniciante</li>
     </ul>
 
     <!-- Idiomas -->
@@ -87,53 +95,71 @@ img/
         <li>Português — Nativo</li>
         <li>Inglês — Intermediário</li>
     </ul>
+
 </section>
 
 
-<!-- SEÇÃO PORTFÓLIO -->
+
+<!--SEÇÃO PORTFÓLIO-->
 <section id="portfolio" class="section">
 
+  <div class="portfolio-container">
     <h2>Portfólio</h2>
 
-    <p>Aqui está o meu projeto de Banco de Dados desenvolvido durante os estudos.</p>
+    <p>Abaixo está um dos projetos que desenvolvi durante minha formação.</p>
 
     <ul>
-        <li>
-            <strong>Projeto: Modelagem e Implementação de Banco de Dados</strong>
-            <br>
+      <li>
+        <strong>Projeto: Modelagem e Implementação de Banco de Dados</strong>
 
-            <p>
-                Projeto dividido em duas etapas: modelagem conceitual (MER) e
-                implementação no MySQL. Inclui criação de tabelas, chaves
-                primárias, estrangeiras e consultas SQL para relatórios.
-            </p>
+        <p>
+          Este projeto foi dividido em duas partes: criação do modelo conceitual (MER)
+          e implementação no MySQL. Trabalhei com chaves primárias, estrangeiras
+          e consultas SQL para relatórios simples.
+        </p>
 
-            <!-- Aqui está o link para o PDF -->
-            <a href="projeto-banco-dados.pdf" target="_blank">Abrir PDF do projeto</a>
-        </li>
+        <!-- Link para o PDF anexado ao repositório -->
+        <a href="projeto-banco-dados.pdf" target="_blank">Abrir PDF do projeto</a>
+      </li>
     </ul>
+  </div>
 
 </section>
-<!-- SEÇÃO: CONTATO (formulário) -->
+
+
+
+<!-- SEÇÃO DE CONTATO (FORMULÁRIO) -->
 <section id="contato" class="section">
+
   <h2>Contato</h2>
 
-  <p>Deixe sua mensagem — eu respondo por e-mail.</p>
+  <p>Preencha o formulário abaixo para me enviar uma mensagem.</p>
 
-  <!-- novalidate: será feito validação personalizada em JavaScript -->
+  <!-- O novalidate permite que eu faça a validação via JavaScript -->
   <form id="contact-form" novalidate>
+
+    <!-- Campo nome -->
     <label for="name">Nome</label>
     <input id="name" name="name" type="text" placeholder="Seu nome" required>
 
+    <!-- Campo email -->
     <label for="email">E-mail</label>
     <input id="email" name="email" type="email" placeholder="seu@exemplo.com" required>
 
+    <!-- Campo mensagem -->
     <label for="message">Mensagem</label>
     <textarea id="message" name="message" rows="5" placeholder="Escreva sua mensagem" required></textarea>
 
     <button type="submit">Enviar</button>
   </form>
 
-  <!-- local para mostrar mensagens de erro/sucesso (acessível) -->
-  <div id="form-message" aria-live="polite" role="status" style="margin-top:0.5rem"></div>
+  <!-- Mensagens de erro e sucesso aparecem aqui -->
+  <div id="form-message" aria-live="polite"></div>
+
 </section>
+
+
+
+</body>
+</html>
+

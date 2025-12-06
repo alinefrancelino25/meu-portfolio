@@ -253,16 +253,17 @@ body {
   max-width: 900px;
   margin: 3rem auto;
   padding: 2rem;
-  background:#e8f2ff;
+  background:#a7bedc;
   border-radius: 12px;
   box-shadow: 0 2px 10px rgba(0,0,0,0.05);
 }
 
 /* Tema escuro para as seções */
 html.dark .section {
-  background:#182234;
+  background: #6c0767;
   box-shadow: 0 2px 10px rgba(255,255,255,0.03);
 }
+
 
 /* Títulos */
 .section h2 {
@@ -299,4 +300,5 @@ h2, h3 {
 p, li {
   line-height: 1.6;
 }
+
 
